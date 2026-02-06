@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Gulab Jamun!</title>
+    <style>
+      /* CSS STYLING */
+      :root {
+        --primary: #ff4d6d;
+        --secondary: #ffb3c1;
+        --bg: #fff0f3;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg);
+        text-align: center;
+        color: #333;
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      /* Countdown Container */
+      #countdown-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff4d6d, #ff8fa3);
+        color: white;
+      }
+
+      .timer {
+        font-size: clamp(3rem, 10vw, 5rem);
+        font-weight: bold;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+      }
+
+      /* Surprise Section (Hidden initially) */
+      #surprise {
+        display: none;
+        padding: 20px;
+        animation: fadeIn 2s ease-in;
+      }
+
+      .main-title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        color: var(--primary);
+        margin-top: 50px;
+      }
+
+      /* Letter Styling */
+      .letter {
+        background: #fff;
+        max-width: 500px;
+        margin: 40px auto;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        font-family: "Georgia", serif;
+        font-style: italic;
+        text-align: left;
+        border-left: 8px solid var(--primary);
+        line-height: 1.8;
+        position: relative;
+      }
+
+      .heart-icon {
+        font-size: 2.5rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .signature {
+        text-align: right;
+        font-weight: bold;
+        color: var(--primary);
+        margin-top: 20px;
+      }
+
+      /* Polaroid Gallery */
+      .food-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 40px 20px;
+      }
+
+      .polaroid {
+        background: white;
+        padding: 15px 15px 30px 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+      }
+
+      .polaroid img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid #eee;
+      }
+
+      .polaroid p {
+        margin-top: 15px;
+        font-family: "Comic Sans MS", cursive;
+        font-size: 1rem;
+        color: #555;
+      }
+
+      /* Rotations for fun */
+      .polaroid:nth-child(odd) {
+        transform: rotate(-3deg);
+      }
+      .polaroid:nth-child(even) {
+        transform: rotate(3deg);
+      }
+      .polaroid:hover {
+        transform: scale(1.1) rotate(0deg);
+        z-index: 10;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Confetti Animation */
+      .confetti {
+        position: fixed;
+        top: -10px;
+        width: 10px;
+        height: 10px;
+        animation: fall 4s linear infinite;
+        z-index: 999;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh) rotate(720deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="birthdaySong" loop>
+      <source
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <div id="countdown-container">
+      <h1>Counting down for my favorite...</h1>
+      <div style="font-size: 2rem; margin-bottom: 10px">🍯 Gulab Jamun 🍯</div>
+      <div class="timer" id="timer">00:00:00</div>
+      <p>Stay tuned! Something sweet happens at Midnight!</p>
+    </div>
+
+    <div id="surprise">
+      <h1 class="main-title">Happy Birthday, Gulab Jamun! 🎉</h1>
+
+      <div class="letter">
+        <span class="heart-icon">❤️</span>
+        <p>My Dearest Gulab Jamun,</p>
+        <p>
+          Just like the dessert you're named after, you bring so much sweetness
+          and joy into my world. Whether we are laughing over silly jokes or
+          planning our next big meal, every moment with you is special.
+        </p>
+        <p>
+          I hope this year brings you as much happiness as a giant plate of your
+          favorite food! Keep shining and stay as wonderful as you are. ✨
+        </p>
+        <div class="signature">Forever yours,<br />chottu</div>
+      </div>
+    </div>
+  </body>
+</html>
